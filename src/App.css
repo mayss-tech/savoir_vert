@@ -1,0 +1,22 @@
+.bar_content{
+  display:flex;
+  justify-content: space-around;
+}
+.bar_details{
+  list-style:none;
+  
+}
+.none{
+  display:none;
+}
+.msg{
+  background-color: rgba(240, 240, 126, 0.712);
+  width: 10vw;
+  height: 5vh;
+  border-radius: 1vh;
+  -webkit-border-radius: 1vh;
+  -moz-border-radius: 1vh;
+  -ms-border-radius: 1vh;
+  -o-border-radius: 1vh;
+  
+}
