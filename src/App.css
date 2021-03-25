@@ -1,14 +1,70 @@
-.bar_content{
-  display:flex;
-  justify-content: space-around;
+i{
+  cursor:pointer;
+  margin-right: 0.5vw;
 }
-.bar_details{
-  list-style:none;
-  
+
+input{
+  width:18vw;
+  outline: none;
+  background-color: #70795491;
+  border:none;
+  padding: 10px;
+  margin: 2px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  position: relative;
+}
+
+button{
+  padding: 8px;
+  background-color:#707954 ;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 2vh;
+}
+.fa-search{
+  position: absolute;
+  top:0.8vw;
+  left: 17vw;}
+/* navBar */
+.bar_content{
+  display: flex;
+  position : fixed;
+  top:0;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 14%;
+  color: black;
+  background-color: #70795455;
+}
+.bar_information{
+  display:flex;
+  align-items: center;
+  cursor: pointer;
+}
+.fa-question, .fa-comments, .fa-home{
+  background:#707954 ; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 .none{
   display:none;
-}
+} 
 .msg{
   background-color: rgba(240, 240, 126, 0.712);
   width: 10vw;
@@ -19,4 +75,178 @@
   -ms-border-radius: 1vh;
   -o-border-radius: 1vh;
   
+}
+.home_phrase{
+  position : absolute;
+ top:20vh;
+ margin-left:32vw;
+ color: whitesmoke;
+ font-size: 80px;
+ font-family: Palace Script MT;
+}
+.home_choice{
+  position : absolute;
+  top:50vh; 
+  display:flex;
+  justify-content: space-around;
+}
+.sirin{
+  background: #707954 ; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  color: whitesmoke;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  font-size: 28px;
+  top:17%;
+}
+.may1{
+  cursor: pointer;
+  margin-left:62vw;
+}
+.may2{
+  cursor: pointer;
+  margin-left:142vw
+}
+/* slide */ 
+.slider{
+  position:relative;
+
+}
+.slide{
+  width: 100%;
+  height: 100vh;
+}
+/*footer*/
+.footer{
+  display: flex;
+  position : absolute;
+  top:100%;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 30%;
+  color: whitesmoke;
+  background-color: #70795455;
+}
+.fa-chevron-circle-up{
+  margin-left: 100%;
+}
+/* .footer_icon{
+  
+} */
+.fa-facebook{
+  color : #0D88F0;
+}
+.imgContact{
+  height: 100vh;
+  width: 100vw;
+}
+.contact_details{
+  background-color: #70795462;
+  top:15%;
+  height: 80vh;
+  width: 60vw;
+  position: absolute;
+  border-radius: 1vh;
+  -webkit-border-radius: 1vh;
+  -moz-border-radius: 1vh;
+  -ms-border-radius: 1vh;
+  -o-border-radius: 1vh;
+  margin-left:20vw;
+  text-align: center;
+}
+.contact_content1 {
+  margin-left: 23vw;
+  display:flex;
+  align-items: center;
+}
+.contact_content2 {
+  margin-left: 24.2vw;
+  display:flex;
+  align-items: center;
+}
+/* plants*/
+.loadingImg{
+  margin-top: 20vh;
+  margin-left:35%
+}
+.errorImg{
+  margin-top:17%;
+  margin-left:38%
+}
+.plants_page{
+  margin-top:15%;
+  display:flex;
+  flex-wrap:wrap;
+  text-align: center;
+}
+.plants_details{
+  margin-bottom:2vw;
+  margin-left:2.5vw;
+  border:#707954 solid 1px ;
+
+}
+.plants_img{
+  width: 25vw;
+  height: 55vh;
+
+}
+/*panier*/
+.panier_bar{
+  background-color: #dfebbd96;
+  position:fixed ;
+  width: 100%;
+  height: 10%;
+  top:14%
+}
+.search_plant{
+  top:18%;
+  margin-left: 40vw;
+  position: absolute;
+}
+.panier{
+  position: absolute;
+  top:18%;
+  margin-left:90vw;
+}
+.fa-shopping-cart{
+  color:#707954;
+  font-size: 35px;
+}
+.panier_number{
+  background:rgba(5, 4, 4, 0.85); 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  border-radius: 50%;
+  position: absolute;
+  /* top:0.1%; */
+  margin-top: 0vh;
+   margin-left:2vw; 
+}
+/*cartItems*/
+.cartItems{
+  margin-top:15%;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cartItemsImg{
+  height: 100px;
+  width: 100px;
+  border-radius: 10px ;
+  -webkit-border-radius: 10px ;
+  -moz-border-radius: 10px ;
+  -ms-border-radius: 10px ;
+  -o-border-radius: 10px ;
 }

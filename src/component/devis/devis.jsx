@@ -1,56 +1,66 @@
 import React,{useState} from 'react';
-
+import ImgHome from '../carrousel/ImgHome';
 const Devis = () => {
     const[open,setOpen]=useState(false);
     const[openTerrain,setOpenTerrain]=useState(false);
     const[openFacade,setOpenFacade]=useState(false);
+    const[openCondition,setOpenCondition]=useState(false);
     const Alert =()=>{
         alert("Votre demande de devis a été envoyé avec succès")
     }
     return (
         <div>
+        <ImgHome/>
+            <form className="contact_details">
         <div>
-        <span>Nom et prénom</span>
+        <span> <b>Nom et prénom</b></span>
         <input type="text"/>
         </div>
         <div>
-        <span>Société</span>
-        <input type="text"/>
-        </div>
-        <div>
-            <span>Email</span>
+            <span><b>Email</b></span>
             <input type="email"/>
         </div>
         <div>
-            <span>Téléphone</span>
+            <span><b>Téléphone</b></span>
             <input type="text"/>
         </div>
         <div>
-            <span>Code postale</span>
+            <span><b>Ville</b></span>
             <input type="text"/>
+        </div>
+        <div style={{display:"flex"}}>
+            <span><b>Vocation</b></span>
+                <div>
+                    <input type="checkbox" id="Résidentiel"/>
+                    <label for="Résidentiel">Résidentiel</label>
+                </div>
+               
+                
+                <div>
+                    <input type="checkbox" id="Entreprise"/>
+                    <label for="Entreprise">Entreprise</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="Hotel"/>
+                    <label for="Hotel">Hôtel</label>
+                </div>
         </div>
         
         <div style={{display:"flex"}}>
-            <span>Type de prestation</span>
+            <span><b>Type de prestation</b></span>
                 <div>
-                    <input type="checkbox" id="Conception"/>
+                    <input type="checkbox" id="Conception" color="green"/>
                     <label for="Conception">Conception</label>
                 </div>
-                <div>
-                    <input type="checkbox" id="Aménagement"/>
-                    <label for="Aménagement">Réaménagement</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="veg"/>
-                    <label for="veg">Fourniture végétale</label>
-                </div>
+               
+                
                 <div>
                     <input type="checkbox" id="irrigation"/>
                     <label for="irrigation">Système d'irrigation</label>
                 </div>
         </div>
                 <div style={{display:"flex"}}>
-                    <p>Superficie</p>
+                    <p><b>Superficie</b></p>
                     <div>
                         <div >
                     <form>
@@ -78,7 +88,7 @@ const Devis = () => {
                 
         </div>
         <div style={{display:"flex"}}>
-            <span>Votre message</span>
+            <span><b>Votre message</b></span>
             <textarea onClick={()=>setOpen(!open)}/>
         <div className={open?"s":"none"}>
             <p className="msg">zedcf...</p>
@@ -99,11 +109,21 @@ const Devis = () => {
             </select>
         </div>
         <div>
-            <form>
-            <button type="submit" onClick={Alert}>Envoyer la demande de devis</button>
-            </form>
-          
+                <h5>Voir conditions de paiement</h5>
+                <p onClick={()=>setOpenCondition(!openCondition)}><i className="fas fa-angle-down"></i></p>
+                <div className={openCondition?"s":"none"}>
+            <p >
+            20% à la commande, solde à la récéption des documents (chaque phase à part)
+
+            </p>
         </div>
+            </div>
+        <div>
+            
+            <button type="submit" onClick={Alert}><b>Envoyer la demande de devis</b></button>
+        </div>
+        </form>
+            
         </div>
     )
 }
