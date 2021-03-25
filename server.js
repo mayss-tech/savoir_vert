@@ -1,20 +1,14 @@
 const express=require('express');
-// const connectDB = require ('./Config/dbConnect');
-
-// const user=require('./routes/User');
-// const restaurant=require('./routes/Restaurant');
-// const menu=require('./routes/Menu');
+const connectDB = require ('../Backend/config/dbConnect');
+const devis = require ('../Backend/routes/devisRoute');
+const fourniture = require('./routes/fournitureRoute');
 
 const app=express();
 
 app.use(express.json());
-// app.use('/user', user);
-// app.use('/dataRestaurant', restaurant);
-// app.use('/dataMenu', menu)
-console.log("hello");
-
-
-// connectDB();
+app.use('/devis', devis);
+app.use('/fourniture', fourniture);
+connectDB();
 
 const PORT= process.env.PORT || 6000;
 app.listen(PORT,err=> err ? console.error(error):console.log( `server is running on PORT ${PORT}`));

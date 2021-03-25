@@ -4,7 +4,9 @@
   "description": "projet savoir_vert",
   "main": "server.js",
   "dependencies": {
+    "config": "^3.3.3",
     "express": "^4.17.1",
+    "express-validator": "^6.10.0",
     "mongoose": "^5.11.15",
     "nodemailer": "^6.4.18"
   },
