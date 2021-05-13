@@ -1,10 +1,10 @@
 const express = require ('express');
 
 
-const {fournitureSave, fournitureFind} = require('../controllers/fournitureControllers');
+const {fournitureSave,  fournitureDetails} = require('../controllers/fournitureControllers');
 const Router=express.Router()
 
 Router.post('/newFourniture', fournitureSave);
-Router.get('/newFourniture', fournitureFind);
+Router.post('/fournitureDetails', fournitureDetails);
 
 module.exports = Router;
