@@ -8,7 +8,7 @@ const cartItemsReducer = (state=initialState,{type,payload})=>{
     switch (type) {
         case ADD_ITEMS:
             const item = payload;
-            const isExist = state.cartItems.find(el=>el._id===item._id)
+            const isExist = state.cartItems.find(el=>el.id===item.id)
             if(!isExist){
                 return{
                 ...state,
@@ -18,19 +18,19 @@ const cartItemsReducer = (state=initialState,{type,payload})=>{
         case INCREASE_ITEMS:
             return{
                 ...state,
-                cartItems : state.cartItems.map(el=>el._id === payload._id
+                cartItems : state.cartItems.map(el=>el.id === payload.id
                     ? {...el, qtn: el.qtn+1} : el)
             }
         case DECREASE_ITEMS:
             return{
                 ...state,
-                cartItems : state.cartItems.map(el=>el._id === payload._id
+                cartItems : state.cartItems.map(el=>el.id === payload.id
                     ? {...el, qtn: el.qtn-1} : el)
             }
         case REMOVE_ITEMS:
             return{
                 ...state,
-                cartItems: state.cartItems.filter(el=>el._id !== payload)
+                cartItems: state.cartItems.filter(el=>el.id !== payload)
             }
         case TOTAL_ITEMS:
             return{

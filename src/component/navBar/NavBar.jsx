@@ -20,10 +20,10 @@ const NavBar = (props) => {
                 <i className="fas fa-question"></i>
                 <p onClick={()=>props.history.push('/propos')}> <b>A propos</b></p>
                 </div>
-                <div className="bar_information">
+                {/* <div className="bar_information">
                 <i className="fab fa-elementor"></i>
                 <p onClick={()=>props.history.push('/devis')}>Devis</p>
-                </div>
+                </div> */}
         </div>
     )
 }

@@ -4,10 +4,10 @@ import {FETCH_PLANTS_BEGIN,
         SEARCH_PLANTS} from "../action-types/Action-type";
 
 const initialState={
-    plants:[],
     loading:false,
     error:null,
-    text:''
+    text:'',
+    fournitureDetails:JSON.parse(localStorage.getItem('plants') )|| []
 };
 const plantsReducer = (state=initialState, {type,payload})=>{
     switch (type) {
@@ -19,7 +19,7 @@ const plantsReducer = (state=initialState, {type,payload})=>{
         case FETCH_PLANTS_SUCCESS:
             return{
                 ...state,
-                plants:payload,
+                fournitureDetails:payload,
                 loading:false,
             }
         case FETCH_PLANTS_FAILURE:
