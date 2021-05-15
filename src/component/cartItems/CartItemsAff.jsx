@@ -3,7 +3,7 @@ import ProgressBar from '../progressBar/ProgressBar';
 import CartItemsMap from './CartItemsMap';
 import Shop from './Shop';
 
-const CartItemsAff = ({isOpen}) => {
+const CartItemsAff = ()=> {
     return (
         <div>
         

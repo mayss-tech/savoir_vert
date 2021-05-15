@@ -5,13 +5,14 @@ import { Redirect } from 'react-router';
 import { withRouter } from 'react-router';
 const UserProfile = (props) => {
     const dispatch = useDispatch();
+    const user = useSelector(state => state.userReducer.user)
     return (
         <div>
             <div className="connect">
             <i className="fas fa-user-alt"></i>
-            {JSON.parse(localStorage.getItem("token") === null) ? 
+            {JSON.parse(localStorage.getItem("token") === null) && user === null? 
              
-            (<p onClick={()=>props.history.push("/login") } > <b>Se connecter</b></p>):
+            (<p> <b>Se connecter</b></p>):
              (<p onClick={()=>{dispatch(logout());
                 props.history.push("/")
              }}> <b>Se déconnecter</b></p>) }

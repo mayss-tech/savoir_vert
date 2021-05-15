@@ -22,7 +22,7 @@ const CartItemsMap = (props) => {
                             dispatch(decreaseItem(el))}}
                             ></i>
                         </div>
-                        {el.qtn===1 ? <h5>{el.price} dt</h5>:<h5>{(el.price)*(el.qtn)} </h5>}
+                        {el.qtn===1 ? <h5>{el.price} dt</h5>:<h5>{(el.price)*(el.qtn)} dt </h5>}
                         <i className="fas fa-trash-alt"
                         onClick={()=>dispatch(removeItem(el.id))}></i>
                     </div>

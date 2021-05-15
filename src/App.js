@@ -9,8 +9,6 @@ import Fourniture from './component/fourniture/Fourniture';
 import CategoryAff from './component/fourniture/CategoryAff';
 import CartCondition from './component/cartItems/CartCondition';
 import Order from './component/cartItems/Order';
-import UserRegister from './component/user/UserRegister';
-import UserLogin from './component/user/UserLogin';
 import ConfirmOrder from './component/order/ConfirmOrder';
 
 function App() {

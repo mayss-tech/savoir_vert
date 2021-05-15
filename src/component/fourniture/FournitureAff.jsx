@@ -10,6 +10,7 @@ import Shop from '../cartItems/Shop';
 
 const FournitureAff = (props) => {
     const dispatch = useDispatch();
+    const fournitureDetails = useSelector(state => state.plantsReducer.fournitureDetails);
     const loading = useSelector(state => state.plantsReducer.loading);
     const error = useSelector(state => state.plantsReducer.error);
 
@@ -18,7 +19,7 @@ const FournitureAff = (props) => {
     },[]);
     return (
        
-        loading?
+        ( fournitureDetails===null || loading)?
         (
             <img 
             src={loadingImg}

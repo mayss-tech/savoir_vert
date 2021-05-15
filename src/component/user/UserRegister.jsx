@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {useDispatch,useSelector} from 'react-redux';
 import { register } from '../../JS/actions/userAction';
 import {useFormik} from 'formik';
@@ -49,20 +49,7 @@ const UserRegister = (props) => {
         onSubmit,
         validate,
     })
-    const dispatch = useDispatch();
-    const addUser = (e) => {
-      e.preventDefault();
-      dispatch(
-        register({
-          name:initialValues.name,
-          telephone:initialValues.telephone,
-          email:initialValues.email,
-          password:initialValues.password,
-          adress:initialValues.adress,
-          codePostal:initialValues.codePostal,
-        })
-      );
-    };
+    const dispatch = useDispatch()
     const loading = useSelector(state => state.userReducer.loading)
     const errors = useSelector(state => state.userReducer.errors)
     const user = useSelector(state => state.userReducer.user)
@@ -80,6 +67,8 @@ const UserRegister = (props) => {
           <div className="formik_control">
             <label For='name'>Nom‍ et prénom</label>
             <input
+            ref={(node) => {
+              initialValues.name = node;}}
               onChange={formik.handleChange}
               value={formik.values.name}
               id='name'
@@ -94,6 +83,8 @@ const UserRegister = (props) => {
           <div className="formik_control">
             <label For='email'>Email</label>
             <input
+            ref={(node) => {
+              initialValues.email= node;}}
               onChange={formik.handleChange}
               value={formik.values.email}
               onBlur={formik.handleBlur}
@@ -109,6 +100,8 @@ const UserRegister = (props) => {
           <div className="formik_control">
             <label For='phone'>Téléphone</label>
             <input
+            ref={(node) => {
+              initialValues.telephone = node;}}
               onChange={formik.handleChange}
               value={formik.values.telephone}
               onBlur={formik.handleBlur}
@@ -124,6 +117,8 @@ const UserRegister = (props) => {
           <div className="formik_control">
             <label For='password'>Mot de passe</label>
             <input
+            ref={(node) => {
+              initialValues.password = node;}}
               onChange={formik.handleChange}
               value={formik.values.password}
               onBlur={formik.handleBlur}
@@ -139,6 +134,8 @@ const UserRegister = (props) => {
           <div className="formik_control">
             <label For='adress'>Adresse</label>
             <input
+            ref={(node) => {
+              initialValues.adress = node;}}
               onChange={formik.handleChange}
               value={formik.values.adress}
               onBlur={formik.handleBlur}
@@ -154,6 +151,8 @@ const UserRegister = (props) => {
           <div className="formik_control">
             <label For='codePostal'>Code Postale</label>
             <input
+            ref={(node) => {
+              initialValues.codePostal = node;}}
               onChange={formik.handleChange}
               value={formik.values.codePostal}
               onBlur={formik.handleBlur}
@@ -166,7 +165,16 @@ const UserRegister = (props) => {
 
           <button type="submit"
           className="btn2"
-          onClick={addUser}>
+          onClick={
+            ()=>dispatch(register({
+              name:initialValues.name.value,
+              email:initialValues.email.value,
+              telephone:initialValues.telephone.value,
+              adress:initialValues.adress.value,
+              password:initialValues.password.value,
+              codePostal:initialValues.codePostal.value
+            }))
+          }>
             <b>Créer votre compte</b>
           </button>
           </form>

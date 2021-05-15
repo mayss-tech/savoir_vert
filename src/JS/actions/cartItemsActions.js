@@ -5,29 +5,33 @@ dispatch({
     type: ADD_ITEMS,
     payload:newItem
 })
-// localStorage.setItem('cartItems', JSON.stringify(getState.cartItemsReducer.cartItems))
+localStorage.setItem('cartItems', JSON.stringify(getState().cartItemsReducer.cartItems))
 };
-export const increaseItem =(el)=>(dispatch)=>{
+export const increaseItem =(el)=>(dispatch,getState)=>{
     dispatch({
         type : INCREASE_ITEMS,
         payload:el
     })
+    localStorage.setItem('cartItems', JSON.stringify(getState().cartItemsReducer.cartItems))
 };
-export const decreaseItem =(el)=>(dispatch)=>{
+export const decreaseItem =(el)=>(dispatch,getState)=>{
     dispatch({
         type : DECREASE_ITEMS,
         payload:el
     })
+    localStorage.setItem('cartItems', JSON.stringify(getState().cartItemsReducer.cartItems))
 };
 export const removeItem = (_id)=>(dispatch)=>{
     dispatch({
         type: REMOVE_ITEMS,
         payload:_id
     })
+    localStorage.removeItem('cartItems')
 };
-export const totalCartItem=(tot)=>(dispatch)=>{
+export const totalCartItem=(tot)=>(dispatch,getState)=>{
     dispatch({
         type:TOTAL_ITEMS,
         payload:tot
     })
+    
 };

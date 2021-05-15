@@ -3,7 +3,7 @@ import { LOGIN_FAIL ,GET_PROFILE_BEGIN,LOGIN_BEGIN, LOGIN_SUCCESS, LOGOUT, REGIS
     GET_PROFILE_FAIL,GET_PROFILE_SUCCESS } from "../action-types/Action-type";
 const initialState = {
     loading: false,
-    user: null ,
+    user:JSON.parse(localStorage.getItem('user') )||  null ,
     isAuth:null,
     errors:[]
 };

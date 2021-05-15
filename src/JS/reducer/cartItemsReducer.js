@@ -1,7 +1,7 @@
 import { ADD_ITEMS, DECREASE_ITEMS, INCREASE_ITEMS, REMOVE_ITEMS, TOTAL_ITEMS,  } from "../action-types/Action-type";
 
 const initialState={
-    cartItems:[],
+    cartItems:JSON.parse(localStorage.getItem('cartItems')) || [],
     qtn:0
 }
 const cartItemsReducer = (state=initialState,{type,payload})=>{

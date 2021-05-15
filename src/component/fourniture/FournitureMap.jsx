@@ -2,9 +2,11 @@ import React,{useState} from 'react';
 import {useSelector} from 'react-redux';
 import FournitureCard from './FournitureCard';
 const FournitureMap = () => {
+ 
     const fournitureDetails = useSelector(state => state.plantsReducer.fournitureDetails);
     const text = useSelector(state => state.plantsReducer.text);
     const [more,setMore]=useState(4)
+ 
     return (
         <div>
         <div className="page">

@@ -7,7 +7,7 @@ const initialState={
     loading:false,
     error:null,
     text:'',
-    fournitureDetails:JSON.parse(localStorage.getItem('plants') )|| []
+    fournitureDetails:JSON.parse(localStorage.getItem('plants') )|| null
 };
 const plantsReducer = (state=initialState, {type,payload})=>{
     switch (type) {

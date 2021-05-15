@@ -6,6 +6,7 @@ hr{
   margin-left: 15%;
   margin-right: 15%;
 }
+
 /* input{
   width:16vw;
   outline: none;
@@ -456,8 +457,42 @@ box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25) ;
  cursor: pointer;
 }
 /*order*/
-.order_page{
-  margin-top:25%;
+.order_user{
+  margin-left:20%;
+  margin-right: 20%;
+  display :grid;
+  grid-template-columns: 30% 30% 25% 
+}
+.order_product{
+  /* background-color: red; */
+  margin-left: 15%;
+  margin-right: 5%;
+  display :grid;
+  grid-template-columns: 25% 25% 25% 25%
+}
+.order_bottom_bar{
+  border-bottom: 1px solid black ;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.order_tot{
+  margin-left:45%;
+  text-align: center;
+}
+table{
+  font-size: 12px;
+  justify-content: space-around;
+}
+.confirmOrder{
+  margin-top: 8%;
+}
+.order_img{
+  margin-left: 20%;
+  /* margin-bottom: 0.5%; */
+}
+.order_confirm{
+  margin-left: 20%;
+  margin-right: 20%;
 }
 /* login*/
 .fa-chevron-down {

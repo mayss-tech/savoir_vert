@@ -40,6 +40,8 @@ const dispatch = useDispatch();
                 <div className="formik_control">
                     <label For="email">Email</label>
                     <input
+                     ref={(node) => {
+                        initialValues.email = node;}}
                     onChange={formik.handleChange}
                     value={formik.values.email}
                     onBlur={formik.handleBlur}
@@ -53,6 +55,8 @@ const dispatch = useDispatch();
                 <div className="formik_control">
                     <label For="password">Mot de passe</label>
                     <input
+                     ref={(node) => {
+                        initialValues.password = node;}}
                     onChange={formik.handleChange}
                     value={formik.values.password}
                     onBlur={formik.handleBlur}
@@ -65,7 +69,10 @@ const dispatch = useDispatch();
                 <div>
                     <button type="submit"
                     className="btnLogin"
-                    onClick={()=>dispatch(login())}>
+                    onClick={()=>dispatch(login({
+                        email:initialValues.email.value,
+                        password:initialValues.password.value
+                    }))}>
                     <b>Se connecter</b></button>
                 </div>
                 <div className="login_h5">

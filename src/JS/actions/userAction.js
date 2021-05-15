@@ -4,7 +4,7 @@ import { LOGIN_FAIL ,GET_PROFILE_BEGIN,
     GET_PROFILE_FAIL,GET_PROFILE_SUCCESS } from "../action-types/Action-type";
 
 import axios from 'axios';
-export const register = (newUser) => async (dispatch) => {
+export const register = (newUser) => async (dispatch,getState) => {
     dispatch({
         type: REGISTER_BEGIN,
     });
@@ -14,6 +14,7 @@ export const register = (newUser) => async (dispatch) => {
         type: REGISTER_SUCCESS,
         payload: addRes.data,
     });
+    localStorage.setItem('user', JSON.stringify(getState().userReducer.user))
     } catch (error) {
     dispatch({
         type: REGISTER_FAIL,
@@ -22,7 +23,7 @@ export const register = (newUser) => async (dispatch) => {
     }
 };
 
-export const login = (cred) => async (dispatch) => {
+export const login = (cred) => async (dispatch,getState) => {
     dispatch({
     type: LOGIN_BEGIN
     });
@@ -33,6 +34,7 @@ export const login = (cred) => async (dispatch) => {
         type: LOGIN_SUCCESS,
         payload: loginRes.data,
     });
+    localStorage.setItem('user', JSON.stringify(getState().userReducer.user))
     } catch (error) {
     dispatch({
         type: LOGIN_FAIL,

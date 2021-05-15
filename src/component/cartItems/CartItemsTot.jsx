@@ -17,19 +17,20 @@ const CartItemsTot = () => {
       useEffect(() => {
         subTot()
       }, [cartItems]);
+      useEffect(() => {
+        localStorage.setItem('total', JSON.stringify(total))
+      }, [total]);
     return (
               <div className="cartItemsTot">
-             <div>
+              <div>
       <UserLogin trigger={isOpen}/>
     </div>
-
           <div>
           <h5>Total
             {" "}
             {Number(cartItems.reduce((a, b) => a + b.price * b.qtn, 0))} dt
           </h5>
           </div>
-
          <div>
          <h5>Frais de livraison : 7 dt</h5>
           <h5>
@@ -38,15 +39,11 @@ const CartItemsTot = () => {
           </h5>
           <button
             className="btn_cart"
-            onClick={() => { setIsOpen(true)}
-              // dispatch(totalCartItem (total))}
-              // props.history.push("/login")
-  
-               }>
+            onClick={() => { setIsOpen(true) 
+              dispatch(totalCartItem (total))}}>
             <b>Commander</b>
           </button>
           </div>
-    
       </div>
     )
 }

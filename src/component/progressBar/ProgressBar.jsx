@@ -6,9 +6,8 @@ const ProgressBar = () => {
     const stepper = useSelector(state => state.progressBar.stepper);
     const cartItems = useSelector(state => state.cartItemsReducer.cartItems);
     useEffect(() => {
-      let category =JSON.parse(localStorage.getItem('plants'))
-    if(category!==null){setAffCategory(category.name)}
-    else {setAffCategory("Catégorie")} 
+      let plants =JSON.parse(localStorage.getItem('plants'))
+      if(plants !==null) {setAffCategory(plants.name)} 
     }, []);
     return (
         <div >
